@@ -1,0 +1,6 @@
+name: 'SPM lcov report'
+description: 'Swift Package Manager Code Coverage Report'
+author: 'Maxime Epain'
+runs:
+    using: 'docker'
+    image: 'Dockerfile'
