@@ -1,6 +1,15 @@
 name: 'SPM lcov report'
 description: 'Swift Package Manager Code Coverage Report'
 author: 'Maxime Epain'
+inputs:
+    output-file:
+        description: 'The output file path'
+        required: false
+        default: '.build/debug/codecov/lcov.info'
+    file-format:
+        description: 'The output file format'
+        required: false
+        default: 'lcov'
 runs:
     using: 'node12'
     main: 'index.js'
