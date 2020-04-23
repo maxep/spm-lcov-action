@@ -13,5 +13,12 @@ Swift Package Manager Code Coverage Report.
 **Optional** Use the specified output format. The supported formats are: “text” (JSON), “lcov” (Default).
 
 ## Example usage
+```yml
+- name: Run tests
+      run: swift test --enable-code-coverage
 
-uses: maxep/spm-lcov-action@0.2.0
+- name: Test coverage
+    uses: maxep/spm-lcov-action@0.3.0
+    with:
+        output-file: ./coverage/lcov.info
+```
