@@ -1,6 +1,9 @@
-name: 'SPM lcov report'
-description: 'Swift Package Manager Code Coverage Report'
+name: 'Swift Coverage Report'
+description: 'Report SPM test coverage summary and lcov file'
 author: 'Maxime Epain'
+branding:
+    icon: 'check-circle'  
+    color: 'orange'
 inputs:
     output-file:
         description: 'The output file path'
