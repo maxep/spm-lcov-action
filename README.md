@@ -22,11 +22,11 @@ The action will also create a coverage file that can be digested by other action
 
 ## Inputs
 
-#### `output-file` (otional)
+#### `output-file` (optional)
 
 Specify a file path of the coverage report. By default, the coverage will be reported to `.build/debug/codecov/lcov.info`. If the directory does not exist, it will be created.
 
-#### `file-format` (otional)
+#### `file-format` (optional)
 
 Use the specified output format. The supported formats are: “text” (JSON), “lcov” (Default).
 
