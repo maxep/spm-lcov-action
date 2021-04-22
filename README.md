@@ -4,7 +4,7 @@ Swift Package Manager Code Coverage Report.
 
 ## Summary Report
 
-The action will report a test coverage summary in you job logs:
+The action will report a test coverage summary in your job logs:
 
 ```
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -18,17 +18,17 @@ TOTAL                              75                16    78.67%          34   
 
 ## LCOV Report
 
-The action will also create a coverage file that can be digest by other actions, such as [romeovs/lcov-reporter-action](https://github.com/romeovs/lcov-reporter-action) that can comment PRs with the coverage report.
+The action will also create a coverage file that can be digested by other actions, such as [romeovs/lcov-reporter-action](https://github.com/romeovs/lcov-reporter-action) that can comment PRs with the coverage report.
 
 ## Inputs
 
-#### `output-file`
+#### `output-file` (otional)
 
-**Optional** Specify a file path to write coverage report into. By default, the coverage will be reported to `.build/debug/codecov/lcov.info`. If the directory does not exist, it is created.
+Specify a file path of the coverage report. By default, the coverage will be reported to `.build/debug/codecov/lcov.info`. If the directory does not exist, it will be created.
 
-#### `file-format`
+#### `file-format` (otional)
 
-**Optional** Use the specified output format. The supported formats are: “text” (JSON), “lcov” (Default).
+Use the specified output format. The supported formats are: “text” (JSON), “lcov” (Default).
 
 ## Example usage
 ```yml
@@ -36,7 +36,7 @@ The action will also create a coverage file that can be digest by other actions,
       run: swift test --enable-code-coverage
 
 - name: Test coverage
-    uses: maxep/spm-lcov-action@0.3.0
-    with:
-        output-file: ./coverage/lcov.info
+  uses: maxep/spm-lcov-action@0.3.0
+  with:
+      output-file: ./coverage/lcov.info
 ```
