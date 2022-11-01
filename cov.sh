@@ -4,6 +4,11 @@ PATH=$PATH
 BIN_PATH="$(swift build --show-bin-path)"
 XCTEST_PATH="$(find ${BIN_PATH} -name '*.xctest')"
 COV_BIN=$XCTEST_PATH
+CMD="llvm-cov"
+if ! command -v "$CMD" &> /dev/null
+then
+    CMD="xcrun llvm-cov"
+fi
 
 INSTR_PROFILE=.build/debug/codecov/default.profdata
 IGNORE_FILENAME_REGEX=".build|Tests"
@@ -32,13 +37,13 @@ fi
 
 mkdir -p "$(dirname "$OUTPUT_FILE")"
 
-llvm-cov report \
+$CMD report \
     "${COV_BIN}" \
     -instr-profile=$INSTR_PROFILE \
     -ignore-filename-regex=$IGNORE_FILENAME_REGEX \
     -use-color
 
-llvm-cov export \
+$CMD export \
     "${COV_BIN}" \
     -instr-profile=$INSTR_PROFILE \
     -ignore-filename-regex=$IGNORE_FILENAME_REGEX \
